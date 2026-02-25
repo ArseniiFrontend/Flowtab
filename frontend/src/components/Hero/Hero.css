@@ -1,0 +1,110 @@
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: 952px;
+    background: #000;
+    overflow: hidden;
+}
+
+.hero__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: invert(1) brightness(0.6);
+    opacity: 0.35;
+    pointer-events: none;
+}
+
+.hero__content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 800px;
+    text-align: center;
+}
+
+.hero__title {
+    font-family: "Effra";
+    font-style: normal;
+    font-weight: 900;
+    font-size: 72px;
+    line-height: 1.12;
+    color: #fff;
+    max-width: 700px;
+    margin-bottom: 24px;
+}
+
+.hero__text {
+    font-family: "Effra";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #8b8b8b;
+    max-width: 600px;
+    margin-bottom: 32px;
+}
+
+.hero__button {
+    font-family: "Effra";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.4;
+    background: #a8ff35;
+    color: #000;
+    border: none;
+    border-radius: 40px;
+    padding: 16px 32px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.hero__button:hover {
+    background: rgba(135, 211, 34, 1);
+}
+
+.hero__cta {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero__hint {
+    position: absolute;
+    left: calc(100% + 20px);
+    top: -10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none;
+}
+
+.hero__hintText {
+    font-family: "GoodDog";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    color: #fff;
+    text-align: center;
+    transform: rotate(6deg);
+    width: 130px;
+}
+
+.hero__hintArrow {
+    width: 36px;
+    height: 36px;
+    transform: translateX(-40px) rotate(-180deg) scaleX(-1) scaleY(-1);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}

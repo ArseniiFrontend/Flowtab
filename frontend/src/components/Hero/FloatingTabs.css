@@ -1,0 +1,143 @@
+.tabs {
+  position: absolute;
+  left: 50%;
+  bottom: 60px;
+  transform: translateX(-50%);
+  width: min(1100px, calc(100% - 40px));
+  height: 220px;
+  z-index: 5;
+}
+
+.tab {
+  position: absolute;
+  width: 341.23px;
+  height: 82px;
+  background: #181818;
+  display: flex;
+  align-items: center;
+  gap: 15.87px;
+  padding: 0 18px;
+  box-sizing: border-box;
+  user-select: none;
+  box-shadow: 0px 12px 16px rgba(0, 0, 0, 0.9);
+  opacity: 1;
+  transform: rotate(var(--rot));
+  transform-origin: center;
+  transition: opacity 320ms ease, transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.tab::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translate(8px, 8px);
+  opacity: 0.8;
+  filter: blur(5px);
+  z-index: -1;
+}
+
+.tab__icon {
+  width: 31.74px;
+  height: 31.74px;
+  flex: 0 0 auto;
+}
+
+.tab__text {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1 1 auto;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  padding-right: 84.65px;
+}
+
+.tab__title,
+.tab__sub {
+  font-family: "Effra";
+  font-weight: 400;
+  font-size: 23.8065px;
+  line-height: 28px;
+}
+
+.tab__title {
+  color: #fff;
+}
+
+.tab__sub {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.tab__fade {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 84.65px;
+  height: 82px;
+  background: linear-gradient(270deg, #181818 60%, rgba(24, 24, 24, 0) 100%);
+  pointer-events: none;
+}
+
+.tab__close {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  opacity: 0.9;
+}
+
+.tab__close:hover {
+  opacity: 1;
+}
+
+.tab__close img {
+  width: 15.87px;
+  height: 15.87px;
+}
+
+.tab:nth-child(1) {
+  left: 0px;
+  top: 0px;
+  --rot: -4deg;
+  z-index: 4;
+}
+
+.tab:nth-child(2) {
+  left: 202px;
+  top: 69px;
+  --rot: 2deg;
+  z-index: 3;
+}
+
+.tab:nth-child(3) {
+  left: 453px;
+  top: 15px;
+  --rot: -2deg;
+  z-index: 2;
+}
+
+.tab:nth-child(4) {
+  left: 721px;
+  top: 80px;
+  --rot: 4deg;
+  z-index: 1;
+}
+
+.tab--enter {
+  opacity: 0;
+  transform: rotate(var(--rot)) translateY(10px) scale(0.96);
+}
+
+.tab--hidden {
+  opacity: 0;
+  transform: rotate(var(--rot)) translateY(10px) scale(0.96);
+  pointer-events: none;
+}

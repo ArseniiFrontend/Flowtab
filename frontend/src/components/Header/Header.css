@@ -1,0 +1,102 @@
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 99px;
+}
+
+.header__brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    height: 41px;
+}
+
+.header__brandIcon {
+    width: 40px;
+    height: 40px;
+}
+
+.header__brandText {
+    font-family: "Effra";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1;
+    color: #fff;
+}
+
+.header__nav {
+    display: flex;
+    gap: 40px;
+}
+
+.header__nav a {
+    font-family: "Effra";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1;
+    text-align: center;
+    color: #fff;
+    opacity: 1;
+    transition: 0.2s;
+}
+
+.header__nav a:hover {
+    color: rgb(219, 219, 219);
+}
+
+.header__actions {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.header__login {
+    font-family: "Effra";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1;
+    color: #fff;
+
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: 0.2s;
+}
+
+.header__login:hover {
+    color: rgb(219, 219, 219);
+}
+
+.header__register {
+    font-family: "Effra";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1;
+    text-align: center;
+    color: #000;
+
+    background: #fff;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.header__register:hover {
+    background: rgb(219, 219, 219);
+}
