@@ -1,0 +1,25 @@
+.about {
+    width: 100%;
+    min-height: 584px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+}
+
+.about__container {
+    width: 100%;
+}
+
+.about__title {
+    font-family: "Effra";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 76px;
+    color: #000;
+    max-width: 1160px;
+}
+
+.about__title--muted {
+    color: #adadad;
+}
