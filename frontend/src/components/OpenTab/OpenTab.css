@@ -4,6 +4,7 @@
     background: #a8ff35;
     display: flex;
     align-items: center;
+    overflow: hidden;
 }
 
 .openTab__container {
@@ -14,16 +15,24 @@
     justify-content: center;
 }
 
+.openTab__titleMask {
+    overflow: hidden;
+    margin-bottom: 60px;
+}
+
 .openTab__title {
     font-family: "Effra";
     font-style: normal;
-    font-weight: 700;
+    font-weight: 800;
     font-size: 72px;
     line-height: 86px;
     text-align: center;
     color: #000;
-    margin-bottom: 60px;
     max-width: 854px;
+    margin: 0;
+    opacity: 0;
+    transform: translateY(110%);
+    will-change: transform, opacity;
 }
 
 .openTab__cardWrap {
@@ -41,6 +50,13 @@
     border-radius: 16px;
     display: grid;
     place-items: center;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+.openTab__cardReveal {
+    opacity: 0;
+    transform: translateY(48px) scale(0.94);
+    will-change: transform, opacity;
 }
 
 .openTab__photo {
@@ -48,6 +64,8 @@
     max-width: calc(100% - 80px);
     height: auto;
     display: block;
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
 }
 
 .openTab__hint {
@@ -93,6 +111,24 @@
     transform: translateX(-25px) rotate(0deg) scaleX(1) scaleY(1);
 }
 
+.openTab__hintReveal {
+    opacity: 0;
+    will-change: transform, opacity;
+}
+
+.openTab__hintReveal--left {
+    transform: translateX(-24px) translateY(18px) rotate(-4deg);
+}
+
+.openTab__hintReveal--right {
+    transform: translateX(24px) translateY(18px) rotate(4deg);
+}
+
+.openTab__textMask {
+    overflow: hidden;
+    margin-top: 14px;
+}
+
 .openTab__text {
     font-family: "Effra";
     font-style: normal;
@@ -102,5 +138,140 @@
     text-align: center;
     color: #000;
     max-width: 666px;
-    margin-top: 14px;
+    margin: 0;
+    opacity: 0;
+    transform: translateY(100%);
+    will-change: transform, opacity;
+}
+
+.openTab--visible .openTab__title {
+    animation: openTabTitleReveal 0.95s cubic-bezier(0.22, 1, 0.36, 1) 0.08s forwards;
+}
+
+.openTab--visible .openTab__cardReveal {
+    animation:
+        openTabCardReveal 1s cubic-bezier(0.22, 1, 0.36, 1) 0.28s forwards,
+        openTabCardFloat 4.2s ease-in-out 1.4s infinite;
+}
+
+.openTab--visible .openTab__photo {
+    animation: openTabPhotoReveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.5s forwards;
+}
+
+.openTab--visible .openTab__hintReveal--left {
+    animation:
+        openTabHintLeftReveal 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.72s forwards,
+        openTabHintFloatLeft 3.2s ease-in-out 1.7s infinite;
+}
+
+.openTab--visible .openTab__hintReveal--right {
+    animation:
+        openTabHintRightReveal 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.88s forwards,
+        openTabHintFloatRight 3.4s ease-in-out 1.9s infinite;
+}
+
+.openTab--visible .openTab__text {
+    animation: openTabTextReveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.98s forwards;
+}
+
+@keyframes openTabTitleReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(110%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes openTabCardReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(48px) scale(0.94);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes openTabPhotoReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(18px) scale(0.98);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes openTabHintLeftReveal {
+    0% {
+        opacity: 0;
+        transform: translateX(-24px) translateY(18px) rotate(-4deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) translateY(0) rotate(0);
+    }
+}
+
+@keyframes openTabHintRightReveal {
+    0% {
+        opacity: 0;
+        transform: translateX(24px) translateY(18px) rotate(4deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) translateY(0) rotate(0);
+    }
+}
+
+@keyframes openTabTextReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes openTabCardFloat {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-4px) scale(1);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes openTabHintFloatLeft {
+    0% {
+        transform: translateY(0) rotate(-2deg);
+    }
+    50% {
+        transform: translateY(-5px) rotate(2deg);
+    }
+    100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+}
+
+@keyframes openTabHintFloatRight {
+    0% {
+        transform: translateY(0) rotate(2deg);
+    }
+    50% {
+        transform: translateY(-5px) rotate(-2deg);
+    }
+    100% {
+        transform: translateY(0) rotate(2deg);
+    }
 }

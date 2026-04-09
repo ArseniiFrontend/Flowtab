@@ -15,6 +15,8 @@
     filter: invert(1) brightness(0.6);
     opacity: 0.35;
     pointer-events: none;
+    transform: scale(1.04);
+    animation: heroBgReveal 1.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 .hero__content {
@@ -28,6 +30,18 @@
     text-align: center;
 }
 
+.hero__titleBlock {
+    margin-bottom: 24px;
+}
+
+.hero__lineMask {
+    overflow: hidden;
+}
+
+.hero__lineMask + .hero__lineMask {
+    margin-top: 6px;
+}
+
 .hero__title {
     font-family: "Effra";
     font-style: normal;
@@ -36,7 +50,27 @@
     line-height: 1.12;
     color: #fff;
     max-width: 700px;
-    margin-bottom: 24px;
+    margin: 0;
+}
+
+.hero__titleLine {
+    opacity: 0;
+    transform: translateY(110%);
+    animation: heroLineReveal 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    will-change: transform, opacity;
+}
+
+.hero__lineMask--1 .hero__titleLine {
+    animation-delay: 0.2s;
+}
+
+.hero__lineMask--2 .hero__titleLine {
+    animation-delay: 0.38s;
+}
+
+.hero__textMask {
+    overflow: hidden;
+    margin-bottom: 32px;
 }
 
 .hero__text {
@@ -47,10 +81,32 @@
     line-height: 1.5;
     color: #8b8b8b;
     max-width: 600px;
-    margin-bottom: 32px;
+    margin: 0;
+    opacity: 0;
+    transform: translateY(100%);
+    animation: heroTextReveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.58s forwards;
+    will-change: transform, opacity;
+}
+
+.hero__ctaMask {
+    overflow: visible;
+}
+
+.hero__cta {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(80%);
+    animation: heroCtaReveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.78s forwards;
+    will-change: transform, opacity;
 }
 
 .hero__button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     font-family: "Effra";
     font-style: normal;
     font-weight: 700;
@@ -62,18 +118,13 @@
     border-radius: 40px;
     padding: 16px 32px;
     cursor: pointer;
-    transition: 0.25s;
+    transition: transform 0.25s ease, filter 0.25s ease, box-shadow 0.25s ease;
 }
 
 .hero__button:hover {
-    background: rgba(135, 211, 34, 1);
-}
-
-.hero__cta {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    transform: scale(0.97);
+    filter: brightness(0.9);
+    box-shadow: 0 16px 40px rgba(168, 255, 53, 0.22);
 }
 
 .hero__hint {
@@ -107,4 +158,60 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+}
+
+@keyframes heroBgReveal {
+    0% {
+        opacity: 0;
+        transform: scale(1.04);
+    }
+    100% {
+        opacity: 0.35;
+        transform: scale(1);
+    }
+}
+
+@keyframes heroLineReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(110%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heroTextReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heroCtaReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(80%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heroHintFloat {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-6px);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }

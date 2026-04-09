@@ -1,0 +1,50 @@
+.join {
+    width: 100%;
+    min-height: 539px;
+    background: #a8ff35;
+    display: flex;
+    align-items: center;
+}
+
+.join__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.join__title {
+    font-family: "Effra";
+    font-weight: 900;
+    font-size: 72px;
+    line-height: 112%;
+    text-align: center;
+    color: #000;
+    max-width: 740px;
+    margin-bottom: 48px;
+}
+
+.join__titleAccent {
+    color: #87d322;
+}
+
+.join__button {
+    min-width: 180px;
+    height: 57px;
+    background: #000;
+    border-radius: 40px;
+    border: none;
+
+    font-family: "Effra";
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 140%;
+    color: #fff;
+
+    cursor: pointer;
+    transition: scale 0.25s ease, opacity 0.25s ease;
+}
+
+.join__button:hover {
+    scale: 0.97;
+}

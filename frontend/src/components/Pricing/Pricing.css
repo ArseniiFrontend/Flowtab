@@ -1,0 +1,238 @@
+.pricing {
+    width: 100%;
+    min-height: 1128px;
+    background: #000;
+    padding: 140px 0 120px;
+}
+
+.pricing__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pricing__title {
+    width: 100%;
+    max-width: 1160px;
+    font-family: "Effra";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 76px;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 40px;
+}
+
+.pricing__switchWrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.pricing__switchLabel {
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    color: #f5f5f5;
+    opacity: 0.5;
+    transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+.pricing__switchLabel--active {
+    color: #fff;
+    opacity: 1;
+}
+
+.pricing__switch {
+    position: relative;
+    width: 104px;
+    height: 52px;
+    border: none;
+    border-radius: 99px;
+    background: #fff;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.3s ease;
+}
+
+.pricing__switchThumb {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: 36px;
+    height: 36px;
+    border-radius: 99px;
+    background: #a8ff35;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pricing__switch--yearly .pricing__switchThumb {
+    transform: translateX(52px);
+}
+
+.pricing__hint {
+    position: absolute;
+    left: calc(100% + 18px);
+    top: -10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pricing__hintText {
+    font-family: "GoodDog";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+    text-align: center;
+    color: #fff;
+    transform: rotate(6deg);
+    width: 72px;
+}
+
+.pricing__hintArrow {
+    width: 35.39px;
+    height: 35.45px;
+    transform: translateX(-25px) rotate(0deg) scaleX(1) scaleY(1);
+}
+
+.pricing__cards {
+    width: 100%;
+    max-width: 1300px;
+    display: grid;
+    grid-template-columns: repeat(3, 360px);
+    gap: 80px;
+    justify-content: center;
+}
+
+.pricing__card {
+    width: 400px;
+    height: 696px;
+    background: #fafafa;
+    border-radius: 16px;
+    padding: 32px 48px 29px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    box-sizing: border-box;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.pricing__card--featured {
+    background: #a8ff35;
+}
+
+.pricing__cardTop {
+    margin-bottom: 28px;
+}
+
+.pricing__cardTitle {
+    font-family: "Effra";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 100%;
+    color: #000;
+    margin-bottom: 8px;
+}
+
+.pricing__cardSubtitle {
+    font-family: "Effra";
+    font-style: normal;
+    font-weight: 200;
+    font-size: 18px;
+    line-height: 100%;
+    color: #000;
+}
+
+.pricing__divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.2);
+    margin-bottom: 32px;
+}
+
+.pricing__priceRow {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    margin-bottom: 32px;
+}
+
+.pricing__price {
+    font-family: "Effra";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 64px;
+    line-height: 100%;
+    color: #000;
+}
+
+.pricing__priceSuffix {
+    font-family: "Effra";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    color: #000;
+    margin-bottom: 8px;
+}
+
+.pricing__features {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: auto;
+}
+
+.pricing__feature {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: "Effra";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    color: #000;
+}
+
+.pricing__featureIcon {
+    width: 24px;
+    height: 24px;
+    flex: 0 0 auto;
+}
+
+.pricing__button {
+    width: 100%;
+    height: 58px;
+    border: none;
+    border-radius: 29px;
+    background: #a8ff35;
+    color: #000;
+    font-family: "Effra";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 140%;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 40px;
+    transition: scale 0.25s ease, filter 0.25s ease;
+}
+
+.pricing__button:hover {
+    scale: 0.97;
+    filter: brightness(0.97);
+}
+
+.pricing__button--dark {
+    background: #000;
+    color: #fff;
+}

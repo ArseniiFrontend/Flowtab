@@ -24,6 +24,7 @@
   transform: rotate(var(--rot));
   transform-origin: center;
   transition: opacity 320ms ease, transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
 }
 
 .tab::before {
@@ -131,6 +132,26 @@
   z-index: 1;
 }
 
+.tabs--init .tab:nth-child(1) {
+  opacity: 0;
+  animation: tabReveal1 0.85s cubic-bezier(0.22, 1, 0.36, 1) 1s forwards;
+}
+
+.tabs--init .tab:nth-child(2) {
+  opacity: 0;
+  animation: tabReveal2 0.85s cubic-bezier(0.22, 1, 0.36, 1) 1.15s forwards;
+}
+
+.tabs--init .tab:nth-child(3) {
+  opacity: 0;
+  animation: tabReveal3 0.85s cubic-bezier(0.22, 1, 0.36, 1) 1.3s forwards;
+}
+
+.tabs--init .tab:nth-child(4) {
+  opacity: 0;
+  animation: tabReveal4 0.85s cubic-bezier(0.22, 1, 0.36, 1) 1.45s forwards;
+}
+
 .tab--enter {
   opacity: 0;
   transform: rotate(var(--rot)) translateY(10px) scale(0.96);
@@ -140,4 +161,48 @@
   opacity: 0;
   transform: rotate(var(--rot)) translateY(10px) scale(0.96);
   pointer-events: none;
+}
+
+@keyframes tabReveal1 {
+  0% {
+    opacity: 0;
+    transform: rotate(-8deg) translateY(30px) scale(0.94);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(-4deg) translateY(0) scale(1);
+  }
+}
+
+@keyframes tabReveal2 {
+  0% {
+    opacity: 0;
+    transform: rotate(6deg) translateY(34px) scale(0.94);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(2deg) translateY(0) scale(1);
+  }
+}
+
+@keyframes tabReveal3 {
+  0% {
+    opacity: 0;
+    transform: rotate(-6deg) translateY(34px) scale(0.94);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(-2deg) translateY(0) scale(1);
+  }
+}
+
+@keyframes tabReveal4 {
+  0% {
+    opacity: 0;
+    transform: rotate(8deg) translateY(38px) scale(0.94);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(4deg) translateY(0) scale(1);
+  }
 }

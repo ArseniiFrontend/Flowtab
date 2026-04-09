@@ -15,7 +15,7 @@ export type TabItem = {
 };
 
 export const TAB_POOL: TabItem[] = [
-    { id: "tw-crypto", icon: twitter, title: "Cryptopunk", subtitle: "Search" },
+    { id: "tw-crypto", icon: twitter, title: "Usenov Studio", subtitle: "Search" },
     { id: "fb-product", icon: facebook, title: "Product Design", subtitle: "Search" },
     { id: "pt-popular", icon: pinterest, title: "Popular Design", subtitle: "Search" },
     { id: "rd-growth", icon: reddit, title: "Startup Growth", subtitle: "Search" },

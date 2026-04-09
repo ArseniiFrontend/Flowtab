@@ -18,6 +18,7 @@
     align-items: center;
     gap: 12px;
     height: 41px;
+    text-decoration: none;
 }
 
 .header__brandIcon {
@@ -47,8 +48,8 @@
     line-height: 1;
     text-align: center;
     color: #fff;
-    opacity: 1;
-    transition: 0.2s;
+    transition: color 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+    text-decoration: none;
 }
 
 .header__nav a:hover {
@@ -68,12 +69,11 @@
     font-size: 18px;
     line-height: 1;
     color: #fff;
-
     background: transparent;
     border: none;
     cursor: pointer;
     padding: 0;
-    transition: 0.2s;
+    transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .header__login:hover {
@@ -88,15 +88,65 @@
     line-height: 1;
     text-align: center;
     color: #000;
-
     background: #fff;
     border: none;
     padding: 12px 32px;
     border-radius: 40px;
     cursor: pointer;
-    transition: 0.25s;
+    transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .header__register:hover {
     background: rgb(219, 219, 219);
+    transform: translateY(-1px);
+}
+
+.header__reveal {
+    opacity: 0;
+    transform: translateY(115%);
+    animation: headerRevealUp 0.82s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    will-change: opacity, transform;
+}
+
+.header__reveal--1 {
+    animation-delay: 0.08s;
+}
+
+.header__reveal--2 {
+    animation-delay: 0.16s;
+}
+
+.header__reveal--3 {
+    animation-delay: 0.24s;
+}
+
+.header__reveal--4 {
+    animation-delay: 0.32s;
+}
+
+.header__reveal--5 {
+    animation-delay: 0.4s;
+}
+
+.header__reveal--6 {
+    animation-delay: 0.48s;
+}
+
+.header__reveal--7 {
+    animation-delay: 0.58s;
+}
+
+.header__reveal--8 {
+    animation-delay: 0.68s;
+}
+
+@keyframes headerRevealUp {
+    0% {
+        opacity: 0;
+        transform: translateY(115%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

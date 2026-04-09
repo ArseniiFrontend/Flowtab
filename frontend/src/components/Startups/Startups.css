@@ -1,0 +1,55 @@
+.startups {
+    width: 100%;
+    background: #ffffff;
+    padding: 140px 0 128px;
+}
+
+.startups__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.startups__title {
+    font-family: "Effra";
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 76px;
+    text-align: center;
+    color: #000;
+    margin-bottom: 80px;
+    max-width: 1160px;
+}
+
+.startups__grid {
+    width: 100%;
+    max-width: 1160px;
+    display: grid;
+    grid-template-columns: repeat(4, 295.98px);
+    gap: 32px;
+    justify-content: center;
+}
+
+.startups__card {
+    width: 295.98px;
+    height: 133.53px;
+    background: #f5f5f5;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* .startups__card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+} */
+
+.startups__logo {
+    max-width: 200px;
+    max-height: 60px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
