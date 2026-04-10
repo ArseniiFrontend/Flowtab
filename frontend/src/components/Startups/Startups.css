@@ -2,6 +2,7 @@
     width: 100%;
     background: #ffffff;
     padding: 140px 0 128px;
+    overflow: hidden;
 }
 
 .startups__container {
@@ -19,6 +20,12 @@
     color: #000;
     margin-bottom: 80px;
     max-width: 1160px;
+    opacity: 0;
+    transform: translateY(80%);
+}
+
+.startups--visible .startups__title {
+    animation: startupsTitleReveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .startups__grid {
@@ -38,13 +45,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    opacity: 0;
+    transform: translateY(50px) scale(0.94);
+    will-change: transform, opacity;
 }
 
-/* .startups__card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
-} */
+.startups--visible .startups__card {
+    animation: startupsCardReveal 0.95s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: calc(var(--i) * 0.07s);
+}
 
 .startups__logo {
     max-width: 200px;
@@ -53,3 +62,30 @@
     height: auto;
     object-fit: contain;
 }
+
+@keyframes startupsTitleReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(80%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes startupsCardReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(50px) scale(0.96);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* .startups__card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+} */

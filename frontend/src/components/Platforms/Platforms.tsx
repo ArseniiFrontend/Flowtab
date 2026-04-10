@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import "./Platforms.css";
 
 import facebookIcon from "../../assets/icons/Socials/Facebook_icon.png";
@@ -25,27 +26,79 @@ const socials = [
 ];
 
 export default function Platforms() {
+    const sectionRef = useRef<HTMLElement | null>(null);
+    const [isVisible, setIsVisible] = useState(false);
+    const [buttonReady, setButtonReady] = useState(false);
+
+    useEffect(() => {
+        const node = sectionRef.current;
+        if (!node) return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                    observer.unobserve(node);
+                }
+            },
+            {
+                root: null,
+                rootMargin: "-25% 0px -25% 0px",
+                threshold: 0,
+            }
+        );
+
+        observer.observe(node);
+
+        return () => observer.disconnect();
+    }, []);
+
     return (
-        <section className="platforms" id="platforms">
+        <section
+            ref={sectionRef}
+            className={`platforms ${isVisible ? "platforms--visible" : ""}`}
+            id="platforms"
+        >
             <div className="platforms__container container">
                 <h2 className="platforms__title">All platform connect to Findtrend</h2>
 
                 <div className="platforms__socials">
-                    {socials.map((social) => (
-                    <button key={social.id} className={`platforms__socialButton${social.active
-                        ? " platforms__socialButton--active" : "" }`} type="button" aria-label={social.alt}>
-                        <img src={social.icon} alt="" className="platforms__socialIcon" />
-                    </button>
+                    {socials.map((social, index) => (
+                        <button
+                            key={social.id}
+                            className={`platforms__socialButton${social.active ? " platforms__socialButton--active" : ""}`}
+                            type="button"
+                            aria-label={social.alt}
+                            style={{ "--i": index } as React.CSSProperties}
+                        >
+                            <img src={social.icon} alt="" className="platforms__socialIcon" />
+                        </button>
                     ))}
                 </div>
 
                 <div className="platforms__tweets">
-                    <img className="platforms__tweet platforms__tweet--small" src={tweet1} alt="Tweet 1" />
-                    <img className="platforms__tweet platforms__tweet--large" src={tweet2} alt="Tweet 2" />
-                    <img className="platforms__tweet platforms__tweet--small" src={tweet3} alt="Tweet 3" />
+                    <img
+                        className="platforms__tweet platforms__tweet--1 platforms__tweet--small"
+                        src={tweet1}
+                        alt="Tweet 1"
+                    />
+                    <img
+                        className="platforms__tweet platforms__tweet--2 platforms__tweet--large"
+                        src={tweet2}
+                        alt="Tweet 2"
+                    />
+                    <img
+                        className="platforms__tweet platforms__tweet--3 platforms__tweet--small"
+                        src={tweet3}
+                        alt="Tweet 3"
+                    />
                 </div>
 
-                <button className="platforms__button" type="button">
+                <button
+                    className={`platforms__button${buttonReady ? " platforms__button--ready" : ""}`}
+                    type="button"
+                    onAnimationEnd={() => setButtonReady(true)}
+                >
                     View More Trend
                 </button>
             </div>

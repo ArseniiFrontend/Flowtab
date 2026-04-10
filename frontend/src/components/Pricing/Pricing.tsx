@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import "./Pricing.css";
 
 import pointIcon from "../../assets/icons/Pricing/Point_icon.svg";
@@ -63,12 +63,39 @@ const plans: Plan[] = [
 export default function Pricing() {
   const [billing, setBilling] = useState<BillingMode>("monthly");
 
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const node = sectionRef.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(node);
+        }
+      },
+      {
+        rootMargin: "-25% 0px -25% 0px",
+      }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
   const priceSuffix = useMemo(() => {
-    return billing === "monthly" ? "/Month" : "/Month";
+    return "/Month";
   }, [billing]);
 
   return (
-    <section className="pricing" id="pricing">
+    <section
+      ref={sectionRef}
+      className={`pricing ${isVisible ? "pricing--visible" : ""}`}
+      id="pricing"
+    >
       <div className="pricing__container container">
         <h2 className="pricing__title">Get your best deal</h2>
 
@@ -86,9 +113,10 @@ export default function Pricing() {
               billing === "yearly" ? "pricing__switch--yearly" : ""
             }`}
             type="button"
-            aria-label="Toggle billing period"
             onClick={() =>
-              setBilling((prev) => (prev === "monthly" ? "yearly" : "monthly"))
+              setBilling((prev) =>
+                prev === "monthly" ? "yearly" : "monthly"
+              )
             }
           >
             <span className="pricing__switchThumb" />
@@ -113,26 +141,34 @@ export default function Pricing() {
         </div>
 
         <div className="pricing__cards">
-          {plans.map((plan) => {
-            const price = billing === "monthly" ? plan.monthlyPrice : plan.yearlyPrice;
+          {plans.map((plan, index) => {
+            const price =
+              billing === "monthly"
+                ? plan.monthlyPrice
+                : plan.yearlyPrice;
 
             return (
               <article
                 key={plan.id}
+                style={{ "--i": index } as React.CSSProperties}
                 className={`pricing__card ${
                   plan.featured ? "pricing__card--featured" : ""
                 }`}
               >
                 <div className="pricing__cardTop">
                   <h3 className="pricing__cardTitle">{plan.name}</h3>
-                  <p className="pricing__cardSubtitle">{plan.subtitle}</p>
+                  <p className="pricing__cardSubtitle">
+                    {plan.subtitle}
+                  </p>
                 </div>
 
                 <div className="pricing__divider" />
 
                 <div className="pricing__priceRow">
                   <span className="pricing__price">${price}</span>
-                  <span className="pricing__priceSuffix">{priceSuffix}</span>
+                  <span className="pricing__priceSuffix">
+                    {priceSuffix}
+                  </span>
                 </div>
 
                 <ul className="pricing__features">

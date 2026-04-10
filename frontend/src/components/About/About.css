@@ -4,6 +4,7 @@
     background: #ffffff;
     display: flex;
     align-items: center;
+    overflow: hidden;
 }
 
 .about__container {
@@ -11,15 +12,56 @@
 }
 
 .about__title {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    max-width: 1160px;
     font-family: "Effra";
     font-style: normal;
     font-weight: 700;
     font-size: 64px;
     line-height: 76px;
     color: #000;
-    max-width: 1160px;
 }
 
-.about__title--muted {
-    color: #8B8B8B;
+.about__line {
+    display: block;
+    opacity: 0;
+    transform: translateY(90%);
+    will-change: transform, opacity;
+}
+
+.about__line--muted {
+    color: #8b8b8b;
+}
+
+.about--visible .about__line--1 {
+    animation: aboutLineReveal 1.05s cubic-bezier(0.16, 1, 0.3, 1) 0.06s forwards;
+}
+
+.about--visible .about__line--2 {
+    animation: aboutLineReveal 1.05s cubic-bezier(0.16, 1, 0.3, 1) 0.18s forwards;
+}
+
+.about--visible .about__line--3 {
+    animation: aboutLineReveal 1.05s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+}
+
+.about--visible .about__line--4 {
+    animation: aboutLineReveal 1.05s cubic-bezier(0.16, 1, 0.3, 1) 0.42s forwards;
+}
+
+.about--visible .about__line--5 {
+    animation: aboutLineReveal 1.05s cubic-bezier(0.16, 1, 0.3, 1) 0.54s forwards;
+}
+
+@keyframes aboutLineReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(90%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

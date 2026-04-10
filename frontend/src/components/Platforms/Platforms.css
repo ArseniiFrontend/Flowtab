@@ -3,6 +3,7 @@
     min-height: 2209px;
     background: #fafafa;
     padding: 140px 0 140px;
+    overflow: hidden;
 }
 
 .platforms__container {
@@ -21,6 +22,13 @@
     color: #000;
     margin-bottom: 80px;
     max-width: 1160px;
+    opacity: 0;
+    transform: translateY(80%);
+    will-change: transform, opacity;
+}
+
+.platforms--visible .platforms__title {
+    animation: platformsTitleReveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .platforms__socials {
@@ -43,6 +51,14 @@
     justify-content: center;
     cursor: pointer;
     transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    opacity: 0;
+    transform: translateY(50px) scale(0.96);
+    will-change: transform, opacity;
+}
+
+.platforms--visible .platforms__socialButton {
+    animation: platformsSocialReveal 0.95s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: calc(var(--i) * 0.07s);
 }
 
 .platforms__socialButton:hover {
@@ -73,6 +89,9 @@
     display: block;
     width: 100%;
     object-fit: contain;
+    opacity: 0;
+    transform: translateY(50px) scale(0.96);
+    will-change: transform, opacity;
 }
 
 .platforms__tweet--small {
@@ -81,6 +100,18 @@
 
 .platforms__tweet--large {
     max-width: 800px;
+}
+
+.platforms--visible .platforms__tweet--1 {
+    animation: platformsTweetReveal 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.7s forwards;
+}
+
+.platforms--visible .platforms__tweet--2 {
+    animation: platformsTweetReveal 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.84s forwards;
+}
+
+.platforms--visible .platforms__tweet--3 {
+    animation: platformsTweetReveal 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.98s forwards;
 }
 
 .platforms__button {
@@ -97,9 +128,65 @@
     line-height: 140%;
     cursor: pointer;
     padding: 16px 32px;
-    transition: scale 0.25s ease, opacity 0.25s ease;
+    opacity: 0;
+    transform: translateY(50px) scale(0.96);
+    will-change: transform, opacity;
+    transition: transform 0.25s ease;
 }
 
-.platforms__button:hover {
-    scale: 0.97;
+.platforms--visible .platforms__button:not(.platforms__button--ready) {
+    animation: platformsButtonReveal 0.95s cubic-bezier(0.16, 1, 0.3, 1) 1.12s forwards;
+}
+
+.platforms__button--ready {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.platforms__button--ready:hover {
+    transform: scale(0.97);
+}
+
+@keyframes platformsTitleReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(80%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes platformsSocialReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(50px) scale(0.96);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes platformsTweetReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(50px) scale(0.96);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes platformsButtonReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(50px) scale(0.96);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }

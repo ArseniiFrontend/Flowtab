@@ -124,7 +124,6 @@
 .hero__button:hover {
     transform: scale(0.97);
     filter: brightness(0.9);
-    box-shadow: 0 16px 40px rgba(168, 255, 53, 0.22);
 }
 
 .hero__hint {

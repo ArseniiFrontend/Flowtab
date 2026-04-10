@@ -4,6 +4,7 @@
     background: #a8ff35;
     display: flex;
     align-items: center;
+    overflow: hidden;
 }
 
 .join__container {
@@ -24,6 +25,21 @@
     margin-bottom: 48px;
 }
 
+.join__line {
+    display: block;
+    opacity: 0;
+    transform: translateY(60%);
+    will-change: transform, opacity;
+}
+
+.join--visible .join__line--1 {
+    animation: joinLineReveal 1.05s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards;
+}
+
+.join--visible .join__line--2 {
+    animation: joinLineReveal 1.05s cubic-bezier(0.22, 1, 0.36, 1) 0.35s forwards;
+}
+
 .join__titleAccent {
     color: #87d322;
 }
@@ -34,17 +50,49 @@
     background: #000;
     border-radius: 40px;
     border: none;
-
     font-family: "Effra";
     font-weight: 700;
     font-size: 18px;
     line-height: 140%;
     color: #fff;
-
     cursor: pointer;
-    transition: scale 0.25s ease, opacity 0.25s ease;
+    opacity: 0;
+    transform: translateY(60%) scale(0.97);
+    will-change: transform, opacity;
+    transition: transform 0.25s ease, filter 0.25s ease;
 }
 
-.join__button:hover {
-    scale: 0.97;
+.join--visible .join__button:not(.join__button--ready) {
+    animation: joinButtonReveal 1.05s cubic-bezier(0.22, 1, 0.36, 1) 0.65s forwards;
+}
+
+.join__button--ready {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.join__button--ready:hover {
+    transform: scale(0.97);
+}
+
+@keyframes joinLineReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(60%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes joinButtonReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(60%) scale(0.97);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
