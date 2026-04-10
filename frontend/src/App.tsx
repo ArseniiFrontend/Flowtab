@@ -11,13 +11,13 @@ export default function App() {
     return (
         <>
         <Hero />
-        <OpenTab />
-        <About />
+        {/* <OpenTab /> */}
+        {/* <About />
         <Startups />
         <Platforms />
         <Pricing />
         <Join />
-        <Footer />
+        <Footer /> */}
         </>
     );
 }

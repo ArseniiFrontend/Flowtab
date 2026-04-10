@@ -108,6 +108,22 @@ body {
     text-rendering: optimizeLegibility;
 }
 
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+}
+
+button:focus,
+a:focus {
+    outline: none;
+}
+
+button:active,
+a:active {
+    outline: none;
+}
+
 /* =========================
     MEDIA
   ========================= */

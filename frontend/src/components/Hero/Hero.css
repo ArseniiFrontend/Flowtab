@@ -214,3 +214,133 @@
         transform: translateY(0);
     }
 }
+
+@media (max-width: 992px) {
+    .hero {
+        min-height: 980px;
+    }
+
+    .hero__titleBlock {
+        margin-bottom: 20px;
+    }
+
+    .hero__title {
+        font-size: 54px;
+        line-height: 1.08;
+        max-width: 560px;
+    }
+
+    .hero__textMask {
+        margin-bottom: 26px;
+    }
+
+    .hero__text {
+        font-size: 16px;
+        line-height: 1.55;
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero {
+        min-height: 930px;
+    }
+
+    .hero__content {
+        height: 660px;
+    }
+
+    .hero__titleBlock {
+        margin-bottom: 16px;
+    }
+
+    .hero__lineMask + .hero__lineMask {
+        margin-top: 2px;
+    }
+
+    .hero__title {
+        font-size: 40px;
+        line-height: 1.08;
+    }
+
+    .hero__textMask {
+        margin-bottom: 22px;
+    }
+
+    .hero__text {
+        max-width: 380px;
+        font-size: 18px;
+        line-height: 1.55;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        min-height: 950px;
+    }
+
+    .hero__titleBlock {
+        margin-bottom: 16px;
+    }
+
+    .hero__lineMask + .hero__lineMask {
+        margin-top: 2px;
+    }
+
+    .hero__title {
+        font-size: 36px;
+        line-height: 1.4;
+    }
+
+    .hero__textMask {
+        margin-bottom: 22px;
+    }
+
+    .hero__text {
+        max-width: 330px;
+        font-size: 16px;
+        line-height: 1.55;
+    }
+
+    .hero__button {
+        border-radius: 40px;
+        padding: 14px 30px;
+    }
+    
+    .hero__hint {
+        display: none;
+    }
+}
+
+@media (max-width: 385px) {
+    .hero {
+        min-height: 880px;
+    }
+
+    .hero__content {
+        height: 580px;
+    }
+
+    .hero__title {
+        max-width: 300px;
+        font-size: 32px;
+        line-height: 1.1;
+    }
+
+    .hero__text {
+        max-width: 280px;
+        font-size: 16px;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.55);
+    }
+
+    .hero__button {
+        border-radius: 40px;
+        padding: 14px 30px;
+    }
+
+    .hero__buttonIcon {
+        width: 16px;
+        height: 16px;
+    }
+}

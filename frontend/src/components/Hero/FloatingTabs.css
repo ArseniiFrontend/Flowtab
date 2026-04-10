@@ -21,7 +21,7 @@
   user-select: none;
   box-shadow: 0px 12px 16px rgba(0, 0, 0, 0.9);
   opacity: 1;
-  transform: rotate(var(--rot));
+  transform: translateX(var(--tx, 0)) rotate(var(--rot));
   transform-origin: center;
   transition: opacity 320ms ease, transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
   will-change: opacity, transform;
@@ -105,8 +105,9 @@
 }
 
 .tab:nth-child(1) {
-  left: 0px;
-  top: 0px;
+  left: 0;
+  top: 0;
+  --tx: 0;
   --rot: -4deg;
   z-index: 4;
 }
@@ -114,6 +115,7 @@
 .tab:nth-child(2) {
   left: 202px;
   top: 69px;
+  --tx: 0;
   --rot: 2deg;
   z-index: 3;
 }
@@ -121,6 +123,7 @@
 .tab:nth-child(3) {
   left: 453px;
   top: 15px;
+  --tx: 0;
   --rot: -2deg;
   z-index: 2;
 }
@@ -128,6 +131,7 @@
 .tab:nth-child(4) {
   left: 721px;
   top: 80px;
+  --tx: 0;
   --rot: 4deg;
   z-index: 1;
 }
@@ -154,55 +158,279 @@
 
 .tab--enter {
   opacity: 0;
-  transform: rotate(var(--rot)) translateY(10px) scale(0.96);
+  transform: translateX(var(--tx, 0)) rotate(var(--rot)) translateY(10px) scale(0.96);
 }
 
 .tab--hidden {
   opacity: 0;
-  transform: rotate(var(--rot)) translateY(10px) scale(0.96);
+  transform: translateX(var(--tx, 0)) rotate(var(--rot)) translateY(10px) scale(0.96);
   pointer-events: none;
 }
 
 @keyframes tabReveal1 {
   0% {
     opacity: 0;
-    transform: rotate(-8deg) translateY(30px) scale(0.94);
+    transform: translateX(var(--tx, 0)) rotate(-8deg) translateY(30px) scale(0.94);
   }
   100% {
     opacity: 1;
-    transform: rotate(-4deg) translateY(0) scale(1);
+    transform: translateX(var(--tx, 0)) rotate(-4deg) translateY(0) scale(1);
   }
 }
 
 @keyframes tabReveal2 {
   0% {
     opacity: 0;
-    transform: rotate(6deg) translateY(34px) scale(0.94);
+    transform: translateX(var(--tx, 0)) rotate(6deg) translateY(34px) scale(0.94);
   }
   100% {
     opacity: 1;
-    transform: rotate(2deg) translateY(0) scale(1);
+    transform: translateX(var(--tx, 0)) rotate(2deg) translateY(0) scale(1);
   }
 }
 
 @keyframes tabReveal3 {
   0% {
     opacity: 0;
-    transform: rotate(-6deg) translateY(34px) scale(0.94);
+    transform: translateX(var(--tx, 0)) rotate(-6deg) translateY(34px) scale(0.94);
   }
   100% {
     opacity: 1;
-    transform: rotate(-2deg) translateY(0) scale(1);
+    transform: translateX(var(--tx, 0)) rotate(-2deg) translateY(0) scale(1);
   }
 }
 
 @keyframes tabReveal4 {
   0% {
     opacity: 0;
-    transform: rotate(8deg) translateY(38px) scale(0.94);
+    transform: translateX(var(--tx, 0)) rotate(8deg) translateY(38px) scale(0.94);
   }
   100% {
     opacity: 1;
-    transform: rotate(4deg) translateY(0) scale(1);
+    transform: translateX(var(--tx, 0)) rotate(4deg) translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 1280px) {
+  .tabs {
+    width: min(980px, calc(100% - 40px));
+    height: 220px;
+    bottom: 52px;
+  }
+
+  .tab:nth-child(1) {
+    left: 50%;
+    top: 0;
+    --tx: -145%;
+    --rot: -4deg;
+  }
+
+  .tab:nth-child(2) {
+    left: 50%;
+    top: 68px;
+    --tx: -82%;
+    --rot: 2deg;
+  }
+
+  .tab:nth-child(3) {
+    left: 50%;
+    top: 12px;
+    --tx: -18%;
+    --rot: -2deg;
+  }
+
+  .tab:nth-child(4) {
+    left: 50%;
+    top: 78px;
+    --tx: 48%;
+    --rot: 4deg;
+  }
+}
+
+@media (max-width: 1160px) {
+  .tabs {
+    width: min(860px, calc(100% - 32px));
+    height: 220px;
+    bottom: 46px;
+  }
+
+  .tab:nth-child(1) {
+    left: 50%;
+    top: 0;
+    --tx: -128%;
+    --rot: -4deg;
+  }
+
+  .tab:nth-child(2) {
+    left: 50%;
+    top: 64px;
+    --tx: -74%;
+    --rot: 2deg;
+  }
+
+  .tab:nth-child(3) {
+    left: 50%;
+    top: 10px;
+    --tx: -22%;
+    --rot: -2deg;
+  }
+
+  .tab:nth-child(4) {
+    left: 50%;
+    top: 72px;
+    --tx: 30%;
+    --rot: 4deg;
+  }
+}
+
+@media (max-width: 992px) {
+  .tabs {
+    width: 100%;
+    max-width: 380px;
+    height: 360px;
+    bottom: 28px;
+  }
+
+  .tab {
+    width: 300px;
+    height: 72px;
+    padding: 0 16px;
+    gap: 12px;
+  }
+
+  .tab__icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .tab__text {
+    gap: 8px;
+    padding-right: 60px;
+  }
+
+  .tab__title,
+  .tab__sub {
+    font-size: 17px;
+    line-height: 22px;
+  }
+
+  .tab__fade {
+    width: 60px;
+    height: 72px;
+  }
+
+  .tab__close {
+    right: 14px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .tab__close img {
+    width: 12px;
+    height: 12px;
+  }
+
+  .tab:nth-child(1) {
+    left: 50%;
+    top: 0;
+    --tx: -52%;
+    --rot: -4deg;
+  }
+
+  .tab:nth-child(2) {
+    left: 50%;
+    top: 72px;
+    --tx: -48%;
+    --rot: 2deg;
+  }
+
+  .tab:nth-child(3) {
+    left: 50%;
+    top: 144px;
+    --tx: -51%;
+    --rot: -2deg;
+  }
+
+  .tab:nth-child(4) {
+    left: 50%;
+    top: 216px;
+    --tx: -47%;
+    --rot: 3deg;
+  }
+}
+
+@media (max-width: 360px) {
+  .tabs {
+    width: 100%;
+    max-width: 340px;
+    height: 344px;
+    bottom: 24px;
+  }
+
+  .tab {
+    width: 270px;
+    height: 65px;
+    padding: 0 14px;
+    gap: 10px;
+  }
+
+  .tab__icon {
+    width: 23px;
+    height: 23px;
+  }
+
+  .tab__text {
+    gap: 7px;
+    padding-right: 54px;
+  }
+
+  .tab__title,
+  .tab__sub {
+    font-size: 15px; 
+    line-height: 20px;
+  }
+
+  .tab__fade {
+    width: 54px;
+    height: 65px;
+  }
+
+  .tab__close {
+    right: 12px;
+    width: 22px;
+    height: 22px;
+  }
+
+  .tab__close img {
+    width: 11px;
+    height: 11px;
+  }
+
+  .tab:nth-child(1) {
+    left: 50%;
+    top: 0;
+    --tx: -52%;
+    --rot: -4deg;
+  }
+
+  .tab:nth-child(2) {
+    left: 50%;
+    top: 64px; 
+    --tx: -48%;
+    --rot: 2deg;
+  }
+
+  .tab:nth-child(3) {
+    left: 50%;
+    top: 128px;
+    --tx: -51%;
+    --rot: -2deg;
+  }
+
+  .tab:nth-child(4) {
+    left: 50%;
+    top: 192px; 
+    --tx: -47%;
+    --rot: 3deg;
   }
 }
