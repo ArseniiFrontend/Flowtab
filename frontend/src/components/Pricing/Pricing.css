@@ -291,3 +291,233 @@
         transform: translateY(0) scale(1);
     }
 }
+
+@media (max-width: 1380px) {
+    .pricing {
+        min-height: auto;
+        padding: 120px 0 110px;
+    }
+
+    .pricing__title {
+        font-size: 58px;
+        line-height: 70px;
+    }
+
+    .pricing__cards {
+        max-width: 1120px;
+        grid-template-columns: repeat(3, 340px);
+        gap: 32px;
+    }
+
+    .pricing__card {
+        width: 340px;
+        height: 660px;
+        padding: 30px 34px 28px;
+    }
+}
+
+@media (max-width: 1120px) {
+    .pricing {
+        padding: 108px 0 100px;
+    }
+
+    .pricing__title {
+        font-size: 48px;
+        line-height: 58px;
+    }
+
+    .pricing__cards {
+        max-width: 920px;
+        grid-template-columns: repeat(3, 290px);
+        gap: 22px;
+    }
+
+    .pricing__card {
+        width: 290px;
+        height: 620px;
+        padding: 28px 24px 26px;
+    }
+
+    .pricing__cardTitle {
+        font-size: 32px;
+    }
+
+    .pricing__cardSubtitle {
+        font-size: 16px;
+    }
+
+    .pricing__price {
+        font-size: 56px;
+    }
+
+    .pricing__feature {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 950px) {
+    .pricing__cards {
+        max-width: 720px;
+        grid-template-columns: 1fr;
+        gap: 28px;
+        justify-items: center;
+    }
+
+    .pricing__card {
+        width: 460px;
+        max-width: 100%;
+        height: auto;
+        min-height: 700px;
+    }
+}
+
+@media (max-width: 600px) {
+    .pricing {
+        padding: 76px 0 84px;
+    }
+
+    .pricing__title {
+        max-width: 339px;
+        font-size: 36px;
+        line-height: 43px;
+        font-weight: 900;
+        margin-bottom: 28px;
+    }
+
+    .pricing__switchWrap {
+        gap: 16px;
+        margin-bottom: 80px;
+    }
+
+    .pricing__switchLabel {
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        color: #ffffff;
+    }
+
+    .pricing__switch {
+        width: 104px;
+        height: 44px;
+    }
+
+    .pricing__switchThumb {
+        top: 8px;
+        left: 8px;
+        width: 28px;
+        height: 28px;
+    }
+
+    .pricing__switch--yearly .pricing__switchThumb {
+        transform: translateX(60px);
+    }
+
+    .pricing__hint {
+        left: calc(50% + 30px);
+        top: 40px;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .pricing__hintText {
+        font-size: 12px;
+        line-height: 12px;
+        width: 72px;
+        text-align: center;
+    }
+
+    .pricing__hintArrow {
+        width: 28px;
+        height: 28px;
+        transform: translateX(-0px) rotate(220deg) scaleX(-1);
+    }
+
+    .pricing__cards {
+        gap: 20px;
+    }
+
+    .pricing__card {
+        width: 339px;
+        min-height: 602px;
+        border-radius: 15px;
+        padding: 30px 30px 24px;
+    }
+
+    .pricing__cardTop {
+        margin-bottom: 24px;
+    }
+
+    .pricing__cardTitle {
+        font-size: 32px;
+        line-height: 100%;
+        margin-bottom: 14px;
+    }
+
+    .pricing__cardSubtitle {
+        font-size: 18px;
+        line-height: 100%;
+    }
+
+    .pricing__divider {
+        margin-bottom: 32px;
+    }
+
+    .pricing__priceRow {
+        margin-bottom: 24px;
+    }
+
+    .pricing__price {
+        font-size: 60px;
+        font-weight: 400;
+    }
+
+    .pricing__priceSuffix {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+
+    .pricing__features {
+        gap: 20px;
+    }
+
+    .pricing__feature {
+        gap: 8px;
+        font-size: 14px;
+        line-height: 130%;
+    }
+
+    .pricing__featureIcon {
+        width: 18px;
+        height: 18px;
+    }
+
+    .pricing__button {
+        height: 54px;
+        margin-top: 36px;
+        font-size: 14px;
+        border-radius: 28px;
+    }
+}
+
+@media (max-width: 385px) {
+    .pricing {
+        padding: 72px 0 78px;
+    }
+
+    .pricing__title {
+        max-width: 320px;
+        font-size: 34px;
+        line-height: 41px;
+    }
+
+    .pricing__card {
+        width: 339px;
+        max-width: calc(100vw - 36px);
+        padding: 28px 28px 24px;
+    }
+
+    .pricing__feature {
+        font-size: 13px;
+    }
+}

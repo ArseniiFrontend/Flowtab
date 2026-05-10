@@ -15,8 +15,8 @@ export default function App() {
         <About />
         <Startups />
         <Platforms />
-        {/* <Pricing />
-        <Join />
+        <Pricing />
+        {/* <Join />
         <Footer /> */}
         </>
     );
