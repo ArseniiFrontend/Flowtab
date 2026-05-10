@@ -12,8 +12,8 @@ export default function App() {
         <>
         <Hero />
         <OpenTab />
-        {/* <About />
-        <Startups />
+        <About />
+        {/* <Startups />
         <Platforms />
         <Pricing />
         <Join />
