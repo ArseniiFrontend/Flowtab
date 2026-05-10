@@ -13,8 +13,8 @@ export default function App() {
         <Hero />
         <OpenTab />
         <About />
-        {/* <Startups />
-        <Platforms />
+        <Startups />
+        {/* <Platforms />
         <Pricing />
         <Join />
         <Footer /> */}
