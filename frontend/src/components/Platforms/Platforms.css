@@ -190,3 +190,272 @@
         transform: translateY(0) scale(1);
     }
 }
+
+@media (max-width: 1300px) {
+    .platforms {
+        min-height: auto;
+        padding: 120px 0;
+    }
+
+    .platforms__title {
+        font-size: 58px;
+        line-height: 70px;
+        margin-bottom: 72px;
+    }
+
+    .platforms__socials {
+        gap: 14px;
+        margin-bottom: 72px;
+    }
+
+    .platforms__socialButton {
+        width: 110px;
+        height: 110px;
+        border-radius: 14px;
+    }
+
+    .platforms__socialIcon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .platforms__tweets {
+        gap: 36px;
+        margin-bottom: 72px;
+    }
+
+    .platforms__tweet--small,
+    .platforms__tweet--large {
+        max-width: 760px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .platforms {
+        padding: 108px 0;
+    }
+
+    .platforms__title {
+        max-width: 760px;
+        font-size: 48px;
+        line-height: 58px;
+        margin-bottom: 60px;
+    }
+
+    .platforms__socials {
+        gap: 12px;
+        margin-bottom: 56px;
+    }
+
+    .platforms__socialButton {
+        width: 92px;
+        height: 92px;
+        border-radius: 12px;
+    }
+
+    .platforms__socialIcon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .platforms__tweets {
+        gap: 28px;
+        margin-bottom: 60px;
+    }
+
+    .platforms__tweet--small,
+    .platforms__tweet--large {
+        max-width: 680px;
+    }
+
+    .platforms__button {
+        min-width: 180px;
+        height: 54px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 900px) {
+    .platforms {
+        padding: 100px 0;
+    }
+
+    .platforms__title {
+        max-width: 640px;
+        font-size: 46px;
+        line-height: 54px;
+        margin-bottom: 52px;
+    }
+
+    .platforms__socials {
+        gap: 10px;
+        margin-bottom: 50px;
+    }
+
+    .platforms__socialButton {
+        width: 74px;
+        height: 74px;
+        border-radius: 10px;
+    }
+
+    .platforms__socialIcon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .platforms__tweets {
+        gap: 24px;
+        margin-bottom: 54px;
+    }
+
+    .platforms__tweet--small,
+    .platforms__tweet--large {
+        max-width: 620px;
+    }
+
+    .platforms__button {
+        min-width: 172px;
+        height: 52px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 720px) {
+    .platforms {
+        padding: 92px 0;
+    }
+
+    .platforms__title {
+        max-width: 520px;
+        font-size: 44px;
+        line-height: 52px;
+        margin-bottom: 46px;
+    }
+
+    .platforms__socials {
+        width: 100vw;
+        overflow-x: auto;
+        overflow-y: hidden;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        gap: 12px;
+        padding: 0 20px 10px;
+        margin-bottom: 48px;
+
+        scrollbar-width: none;
+    }
+
+    .platforms__socials::-webkit-scrollbar {
+        display: none;
+    }
+
+    .platforms__socialButton {
+        flex: 0 0 auto;
+        width: 82px;
+        height: 82px;
+        border-radius: 12px;
+    }
+
+    .platforms__socialIcon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .platforms__tweets {
+        gap: 24px;
+        margin-bottom: 52px;
+    }
+
+    .platforms__tweet--small,
+    .platforms__tweet--large {
+        width: calc(100vw - 40px);
+        max-width: 620px;
+    }
+
+    .platforms__button {
+        min-width: 172px;
+        height: 52px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .platforms {
+        padding: 76px 0 84px;
+    }
+
+    .platforms__title {
+        width: 339px;
+        max-width: 100%;
+        font-size: 36px;
+        line-height: 43px;
+        font-weight: 900;
+        margin-bottom: 42px;
+    }
+
+    .platforms__socials {
+        gap: 10px;
+        padding: 0 18px 8px;
+        margin-bottom: 38px;
+    }
+
+    .platforms__socialButton {
+        width: 64px;
+        height: 64px;
+        border-radius: 8px;
+    }
+
+    .platforms__socialIcon {
+        width: 31px;
+        height: 31px;
+    }
+
+    .platforms__tweets {
+        gap: 16px;
+        margin-bottom: 36px;
+    }
+
+    .platforms__tweet--small,
+    .platforms__tweet--large {
+        width: calc(100vw - 36px);
+        max-width: 386px;
+        border-radius: 12px;
+    }
+
+    .platforms__button {
+        min-width: 152px;
+        height: 44px;
+        padding: 12px 24px;
+        font-size: 14px;
+        font-weight: 700;
+        border-radius: 40px;
+    }
+}
+
+@media (max-width: 385px) {
+    .platforms {
+        padding: 70px 0 76px;
+    }
+
+    .platforms__title {
+        max-width: 310px;
+        font-size: 32px;
+        line-height: 39px;
+        margin-bottom: 38px;
+    }
+
+    .platforms__socialButton {
+        width: 58px;
+        height: 58px;
+    }
+
+    .platforms__socialIcon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .platforms__tweet--small,
+    .platforms__tweet--large {
+        width: calc(100vw - 28px);
+    }
+}

@@ -14,8 +14,8 @@ export default function App() {
         <OpenTab />
         <About />
         <Startups />
-        {/* <Platforms />
-        <Pricing />
+        <Platforms />
+        {/* <Pricing />
         <Join />
         <Footer /> */}
         </>
