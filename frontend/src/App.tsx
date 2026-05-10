@@ -10,14 +10,14 @@ import Footer from "./components/Footer/Footer";
 export default function App() {
     return (
         <>
-        <Hero />
-        <OpenTab />
-        <About />
-        <Startups />
-        <Platforms />
-        <Pricing />
-        <Join />
-        {/* <Footer /> */}
+            <Hero />
+            <OpenTab />
+            <About />
+            <Startups />
+            <Platforms />
+            <Pricing />
+            <Join />
+            <Footer />
         </>
     );
 }
