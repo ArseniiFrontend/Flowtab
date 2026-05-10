@@ -275,3 +275,410 @@
         transform: translateY(0) rotate(2deg);
     }
 }
+
+@media (max-width: 992px) {
+    .openTab {
+        min-height: 700px;
+    }
+
+    .openTab__titleMask {
+        margin-bottom: 52px;
+    }
+
+    .openTab__title {
+        font-size: 60px;
+        line-height: 72px;
+        max-width: 720px;
+    }
+
+    .openTab__cardWrap {
+        width: 720px;
+        margin-bottom: 42px;
+    }
+
+    .openTab__card {
+        width: 460px;
+        height: 190px;
+    }
+
+    .openTab__photo {
+        width: 330px;
+    }
+
+    .openTab__hint--left {
+        left: 20px;
+        top: 62px;
+    }
+
+    .openTab__hint--right {
+        right: 20px;
+        top: 62px;
+    }
+
+    .openTab__text {
+        max-width: 620px;
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 860px) {
+    .openTab {
+        min-height: 680px;
+    }
+
+    .openTab__title {
+        font-size: 52px;
+        line-height: 62px;
+        max-width: 620px;
+    }
+
+    .openTab__titleMask {
+        margin-bottom: 48px;
+    }
+
+    .openTab__cardWrap {
+        width: 100%;
+        max-width: 620px;
+        margin-bottom: 40px;
+    }
+
+    .openTab__card {
+        width: 400px;
+        height: 172px;
+    }
+
+    .openTab__photo {
+        width: 290px;
+    }
+
+    .openTab__hint {
+        width: 100px;
+    }
+
+    .openTab__hintText {
+        font-size: 13px;
+        line-height: 13px;
+        width: 84px;
+    }
+
+    .openTab__arrow {
+        width: 30px;
+        height: 30px;
+    }
+
+    .openTab__hint--left {
+        left: 8px;
+        top: 58px;
+    }
+
+    .openTab__hint--right {
+        right: 8px;
+        top: 58px;
+    }
+
+    .openTab__text {
+        max-width: 560px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 720px) {
+    .openTab {
+        min-height: 660px;
+        padding: 64px 0;
+    }
+
+    .openTab__title {
+        font-size: 46px;
+        line-height: 54px;
+        max-width: 500px;
+    }
+
+    .openTab__titleMask {
+        margin-bottom: 42px;
+    }
+
+    .openTab__cardWrap {
+        max-width: 500px;
+        margin-bottom: 75px;
+    }
+
+    .openTab__card {
+        width: 360px;
+        height: 156px;
+        border-radius: 14px;
+    }
+
+    .openTab__photo {
+        width: 260px;
+    }
+
+    .openTab__hint {
+        width: 120px;
+    }
+
+    .openTab__hintText {
+        font-size: 15px;
+        line-height: 15px;
+        width: 120px;
+    }
+
+    .openTab__arrow {
+        width: 44px;
+        height: 44px;
+    }
+
+    .openTab__hint--left {
+        left: 20px;
+        top: 125px;
+        z-index: 2;
+    }
+
+    .openTab__hint--right {
+        right: 28px;
+        top: -30px;
+    }
+
+    .openTab__arrow--left {
+        transform: translateX(30px) rotate(-40deg) scaleX(-1) scaleY(-1);
+    }
+
+    .openTab__arrow--right {
+        transform: translateX(-0px) rotate(-65deg) scaleX(1) scaleY(1);
+    }
+
+    .openTab__text {
+        max-width: 460px;
+        font-size: 15px;
+        line-height: 150%;
+    }
+}
+
+@media (max-width: 600px) {
+    .openTab {
+        min-height: 650px;
+        padding: 70px 0;
+    }
+
+    .openTab__titleMask {
+        margin-bottom: 40px;
+    }
+
+    .openTab__title {
+        font-size: 44px;
+        line-height: 52px;
+        max-width: 440px;
+    }
+
+    .openTab__cardWrap {
+        width: 100%;
+        max-width: 440px;
+        margin-bottom: 72px;
+    }
+
+    .openTab__card {
+        width: 340px;
+        height: 150px;
+        border-radius: 14px;
+    }
+
+    .openTab__photo {
+        width: 250px;
+        max-width: calc(100% - 54px);
+    }
+
+    .openTab__hint {
+        display: flex;
+        width: 112px;
+    }
+
+    .openTab__hintText {
+        font-size: 14px;
+        line-height: 14px;
+        width: 112px;
+    }
+
+    .openTab__arrow {
+        width: 40px;
+        height: 40px;
+    }
+
+    .openTab__hint--left {
+        left: 22px;
+        top: 122px;
+        z-index: 2;
+    }
+
+    .openTab__hint--right {
+        right: 24px;
+        top: -32px;
+    }
+
+    .openTab__arrow--left {
+        transform: translateX(28px) rotate(-40deg) scaleX(-1) scaleY(-1);
+    }
+
+    .openTab__arrow--right {
+        transform: translateX(0) rotate(-65deg) scaleX(1) scaleY(1);
+    }
+
+    .openTab__text {
+        max-width: 390px;
+        font-size: 15px;
+        line-height: 150%;
+    }
+}
+
+@media (max-width: 480px) {
+    .openTab {
+        min-height: 650px;
+        padding: 64px 0;
+    }
+
+    .openTab__titleMask {
+        margin-bottom: 58px;
+    }
+
+    .openTab__title {
+        font-size: 38px;
+        line-height: 46px;
+        max-width: 360px;
+    }
+
+    .openTab__cardWrap {
+        max-width: 360px;
+        margin-bottom: 72px;
+    }
+
+    .openTab__card {
+        width: 386px;
+        max-width: calc(100vw - 48px);
+        height: 135px;
+        border-radius: 14px;
+    }
+
+    .openTab__photo {
+        width: 330px;
+        max-width: calc(100% - 48px);
+    }
+
+    .openTab__hint {
+        display: flex;
+        width: 104px;
+    }
+
+    .openTab__hintText {
+        font-size: 13px;
+        line-height: 13px;
+        width: 104px;
+    }
+
+    .openTab__arrow {
+        width: 36px;
+        height: 36px;
+    }
+
+    .openTab__hint--right {
+        right: 12px;
+        top: -48px;
+    }
+
+    .openTab__hint--left {
+        left: 10px;
+        top: 112px;
+        z-index: 2;
+    }
+
+    .openTab__arrow--right {
+        transform: translateX(0) rotate(-65deg) scaleX(1) scaleY(1);
+    }
+
+    .openTab__arrow--left {
+        transform: translateX(28px) rotate(-40deg) scaleX(-1) scaleY(-1);
+    }
+
+    .openTab__textMask {
+        margin-top: 0;
+    }
+
+    .openTab__text {
+        max-width: 310px;
+        font-size: 14px;
+        line-height: 150%;
+    }
+}
+
+@media (max-width: 385px) {
+    .openTab {
+        min-height: 650px;
+        padding: 56px 0;
+    }
+
+    .openTab__titleMask {
+        margin-bottom: 56px;
+    }
+
+    .openTab__title {
+        font-size: 36px;
+        line-height: 43px;
+        max-width: 340px;
+    }
+
+    .openTab__cardWrap {
+        max-width: 340px;
+        margin-bottom: 72px;
+    }
+
+    .openTab__card {
+        width: 340px;
+        max-width: calc(100vw - 48px);
+        height: 134px;
+        border-radius: 14px;
+    }
+
+    .openTab__photo {
+        width: 290px;
+        max-width: calc(100% - 44px);
+    }
+
+    .openTab__hint {
+        display: flex;
+        width: 98px;
+    }
+
+    .openTab__hintText {
+        font-size: 12px;
+        line-height: 12px;
+        width: 98px;
+    }
+
+    .openTab__arrow {
+        width: 34px;
+        height: 34px;
+    }
+
+    .openTab__hint--right {
+        right: -2px;
+        top: -48px;
+    }
+
+    .openTab__hint--left {
+        left: -2px;
+        top: 112px;
+        z-index: 2;
+    }
+
+    .openTab__arrow--right {
+        transform: translateX(0) rotate(-65deg) scaleX(1) scaleY(1);
+    }
+
+    .openTab__arrow--left {
+        transform: translateX(26px) rotate(-40deg) scaleX(-1) scaleY(-1);
+    }
+
+    .openTab__text {
+        max-width: 286px;
+        font-size: 14px;
+        line-height: 150%;
+    }
+}

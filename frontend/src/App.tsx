@@ -11,7 +11,7 @@ export default function App() {
     return (
         <>
         <Hero />
-        {/* <OpenTab /> */}
+        <OpenTab />
         {/* <About />
         <Startups />
         <Platforms />
